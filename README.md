@@ -7,7 +7,7 @@ multicast DNS requests within the network and forwarding the DNS requests to the
 To use mdns-proxy simply run the following command on a Linux host first: `. ./build.sh`
 
 This will generate a new Docker image that can then be run with the following command: 
-`docker run --name mdns-proxy --net=host -d mdns-proxy:latest`
+`docker run --name mdns-proxy -d --restart unless-stopped --net=host mdns-proxy:latest`
 
 **Please note:** Normally it is advised to not use `--net=host` with Docker. However in this case it is required, as 
 multicast DNS - per design - is link local and does not span different networks, including virtual ones on your host. 
