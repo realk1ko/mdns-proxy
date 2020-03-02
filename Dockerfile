@@ -1,6 +1,6 @@
-ARG APP_DIR
-
 FROM python:2
+
+ARG APP_DIR
 
 WORKDIR /usr/src/app
 
